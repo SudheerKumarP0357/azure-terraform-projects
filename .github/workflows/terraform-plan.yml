@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
   
 env: 
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
@@ -51,14 +52,11 @@ jobs:
     - name: Approve Pending
       uses: trstringer/manual-approval@v1
       with:
-        secret: ${{ secrets.GITHUB_TOKEN }}
-        approvers: SudheerKumarP0357
         minimum-approvals: 1
-        issue-title: "Applying latest changes via Terraform IaC"
-        issue-body: "Please review the Terraform Plan step and approve the following github action pipeline $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+        issue-title: Applying latest changes via Terraform IaC
+        issue-body: Please review the Terraform Plan step and approve the following github action pipeline $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
         exclude-workflow-initiator-as-approver: false
         fail-on-denial: true
-        timeout-minutes: 1440 # waits for 1 day
       
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
