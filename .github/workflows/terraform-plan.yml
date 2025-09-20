@@ -17,6 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./projects/project-1 
 
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -44,9 +45,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: |
-        cd ./projects/project-1
-        terraform plan -input=false
+      run: terraform plan -input=false
       env: 
         ARM_CLIENT_ID: ${ secrets.ARM_CLIENT_ID } 
         ARM_TENANT_ID: ${ secrets.ARM_TENANT_ID }
