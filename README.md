@@ -18,11 +18,9 @@ backend.
 
 **Azure Resources to Learn**: Resource Groups, Storage Accounts, Access Keys
 
-**CI/CD**: Basic GitHub Actions pipeline: terraform fmt, validate,
-init, plan.
+**CI/CD**: Basic GitHub Actions pipeline: terraform fmt, validate, init, plan.
 
-**Best Practices**: Remote state storage, tagging conventions, secure
-backend secrets in Key Vault.
+**Best Practices**: Remote state storage, tagging conventions, secure backend secrets in Key Vault.
 
 ## Build Virtual Network with Subnets & NSG
 
@@ -32,8 +30,7 @@ backend secrets in Key Vault.
 
 **CI/CD**: Add linting + terraform plan to pipeline.
 
-**Best Practices**: Introduce modules, variables, and environment-specific
-tfvars.
+**Best Practices**: Introduce modules, variables, and environment-specific tfvars.
 
 ## Deploy VM with Networking
 
@@ -43,20 +40,17 @@ tfvars.
 
 **CI/CD**: Pipeline deploys dev workspace automatically.
 
-**Best Practices**: Use locals for naming, RBAC for VM access, secure SSH
-keys in Key Vault.
+**Best Practices**: Use locals for naming, RBAC for VM access, secure SSH keys in Key Vault.
 
 ## Multi-Environment Setup
 
-**Requirement**: Use Terraform workspaces to manage Dev/QA/Prod for VM +
-VNet infra.
+**Requirement**: Use Terraform workspaces to manage Dev/QA/Prod for VM + VNet infra.
 
 **Azure Resources to Learn**: Previously used resources
 
 **CI/CD**: Add environment-based pipelines with workspace selection.
 
-**Best Practices**: Tagging by environment, cost alerts, workspace
-segregation.
+**Best Practices**: Tagging by environment, cost alerts, workspace segregation.
 
 # Month 2 -- PaaS Services (App Hosting & Databases)
 
@@ -64,13 +58,11 @@ segregation.
 
 **Requirement**: Host a web app on App Service with Azure SQL backend.
 
-**Azure Resources to Learn**: App Services, App Service Plans, Azure SQL
-Database
+**Azure Resources to Learn**: App Services, App Service Plans, Azure SQL Database
 
 **CI/CD**: Add pipeline secret integration with Key Vault.
 
-**Best Practices**: Store DB credentials in Key Vault, secure networking,
-outputs for connection strings.
+**Best Practices**: Store DB credentials in Key Vault, secure networking, outputs for connection strings.
 
 ## Scalable App Behind Load Balancer
 
@@ -80,8 +72,7 @@ outputs for connection strings.
 
 **CI/CD**: Introduce manual approval before prod deployment.
 
-**Best Practices**: Reusable compute module, auto-shutdown dev/test, health
-probes in LB.
+**Best Practices**: Reusable compute module, auto-shutdown dev/test, health probes in LB.
 
 # Month 3 -- Containers & Event-Driven Workloads
 
@@ -93,8 +84,7 @@ probes in LB.
 
 **CI/CD**: Pipeline pushes container image + deploys infra.
 
-**Best Practices**: RBAC-enabled AKS, network policies, kubeconfig stored in
-Key Vault.
+**Best Practices**: RBAC-enabled AKS, network policies, kubeconfig stored in Key Vault.
 
 ## Secure AKS with Ingress + Application Gateway
 
@@ -104,8 +94,7 @@ Key Vault.
 
 **CI/CD**: Deploy helm charts via pipeline after infra.
 
-**Best Practices**: HTTPS via Key Vault certs, autoscaling policies,
-NSG-secured workloads.
+**Best Practices**: HTTPS via Key Vault certs, autoscaling policies, NSG-secured workloads.
 
 ## Event Hub + Azure Functions
 
@@ -115,8 +104,7 @@ NSG-secured workloads.
 
 **CI/CD**: Add function deployment step after infra apply.
 
-**Best Practices**: Zip deployment, Key Vault secrets, Log Analytics
-integration.
+**Best Practices**: Zip deployment, Key Vault secrets, Log Analytics integration.
 
 # Month 4 -- Enterprise Infra (Governance & Monitoring)
 
@@ -128,30 +116,24 @@ integration.
 
 **CI/CD**: Deploy APIs and workflows via pipeline stages.
 
-**Best Practices**: RBAC policies, monitoring via Azure Monitor + Log
-Analytics, policy enforcement.
+**Best Practices**: RBAC policies, monitoring via Azure Monitor + Log Analytics, policy enforcement.
 
 ## Enterprise Monitoring & Governance
 
 **Requirement**: Centralized monitoring + enforce policies across infra.
 
-**Azure Resources to Learn**: Azure Monitor, Log Analytics, Alerts, Azure
-Policy
+**Azure Resources to Learn**: Azure Monitor, Log Analytics, Alerts, Azure Policy
 
 **CI/CD**: Add policy checks pre-deployment.
 
-**Best Practices**: Policy as code, diagnostics settings, budgets and cost
-alerts.
+**Best Practices**: Policy as code, diagnostics settings, budgets and cost alerts.
 
 ## Multi-Region, Multi-Subscription Landing Zone
 
 **Requirement**: Deploy landing zone with networking, security, governance.
 
-**Azure Resources to Learn**: Management Groups, Role Assignments, VNets,
-ExpressRoute/VPN Gateway
+**Azure Resources to Learn**: Management Groups, Role Assignments, VNets, ExpressRoute/VPN Gateway
 
-**CI/CD**: Full pipeline with lint, plan, approval, apply for each
-subscription.
+**CI/CD**: Full pipeline with lint, plan, approval, apply for each subscription.
 
-**Best Practices**: Full modular repo, DR strategy, Terragrunt/monorepo,
-security baselines.
+**Best Practices**: Full modular repo, DR strategy, Terragrunt/monorepo, security baselines.

@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "Azure Resource Group Name"
   type        = string
-  default = "backend"
+  default     = "backend"
 }
 
 variable "location" {
@@ -24,6 +24,6 @@ variable "resource_group_tags" {
 }
 
 variable "storage_account_name" {
-  type = string
+  type        = string
   description = "An unique storage account name across azure cloud"
 }
