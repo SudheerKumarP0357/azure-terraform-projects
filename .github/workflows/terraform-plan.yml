@@ -52,6 +52,8 @@ jobs:
     - name: Approve Pending
       uses: trstringer/manual-approval@v1
       with:
+        secrets: ${{ secrests.GITHUB_TOKEN }}
+        approvers: SudheerKumarP0357
         minimum-approvals: 1
         issue-title: Applying latest changes via Terraform IaC
         issue-body: Please review the Terraform Plan step and approve the following github action pipeline $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
