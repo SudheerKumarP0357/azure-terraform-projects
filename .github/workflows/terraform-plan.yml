@@ -47,6 +47,18 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
+    
+    - name: Approve Pending
+      uses: trstringer/manual-approval@v1
+      with:
+      secret: ${{ secrets.GITHUB_TOKEN }}
+      approvers: SudheerKumarP0357
+      minimum-approvals: 1
+      issue-title: "Applying latest changes via Terraform IaC"
+      issue-body: "Please review the Terraform Plan step and approve the following github action pipeline $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID "
+      exclude-workflow-initiator-as-approver: false
+      fail-on-denial: true
+      timeout-minutes: 1440 # waits for 1 day
       
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
